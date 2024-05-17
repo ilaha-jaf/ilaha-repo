@@ -1,6 +1,15 @@
 name: Push Notification
 
-on: [push]
+on:
+    push:
+        branches:
+            - main
+            - dev
+            - dev-*
+            - test
+    pull_request:
+        types: [opened, synchronized, reopened, closed]
+
 
 jobs:
   notify:
